@@ -21,7 +21,7 @@ class RoomsActivity : BasicActivity(), OnRoomSelectedListener {
         setContentView(R.layout.activity_rooms)
 
         val name = intent.getStringExtra(BUILDING_NAME_PARAM)
-        val id = intent.getLongExtra(BUILDING_ID_PARAM,0)
+        val id = intent.getLongExtra(BUILDING_ID_PARAM, 0)
         val recyclerView = findViewById<RecyclerView>(R.id.list_rooms)
         val adapter = RoomAdapter(this)
 
@@ -52,11 +52,11 @@ class RoomsActivity : BasicActivity(), OnRoomSelectedListener {
 
     override fun onRoomWindowsSelected(id: Long, name: String, current_temp: Double?, target_temp: Double?) {
         val intent = Intent(this, WindowsActivity::class.java)
-        startActivity(intent.putExtra(ROOM_ID_PARAM,id))
+        startActivity(intent.putExtra(ROOM_ID_PARAM, id))
     }
 
     override fun onRoomHeatersSelected(id: Long) {
         val intent = Intent(this, HeatersActivity::class.java)
-        startActivity(intent.putExtra(ROOM_ID_PARAM,id))
+        startActivity(intent.putExtra(ROOM_ID_PARAM, id))
     }
 }

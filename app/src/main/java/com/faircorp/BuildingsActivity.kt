@@ -47,6 +47,6 @@ class BuildingsActivity : BasicActivity(), OnBuildingSelectedListener {
     }
 
     override fun onBuildingSelected(id: Long, name: String) {
-        startActivity(Intent(this,RoomsActivity::class.java).putExtra(BUILDING_ID_PARAM,id).putExtra(BUILDING_NAME_PARAM,name));
+        startActivity(Intent(this, RoomsActivity::class.java).putExtra(BUILDING_ID_PARAM, id).putExtra(BUILDING_NAME_PARAM, name));
     }
 }

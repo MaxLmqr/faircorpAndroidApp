@@ -33,16 +33,16 @@ class WindowsActivity : BasicActivity(), OnWindowSelectedListener {
         recyclerView.setHasFixedSize(true)
         recyclerView.adapter = adapter
 
-        updateRecycler(adapter,id)
+        updateRecycler(adapter, id)
     }
 
 
     override fun onWindowSelected(id: Long) {
-        val intent = Intent(this, WindowActivity::class.java).putExtra(WINDOW_NAME_PARAM,id)
+        val intent = Intent(this, WindowActivity::class.java).putExtra(WINDOW_NAME_PARAM, id)
         startActivity(intent)
     }
 
-    private fun updateRecycler(adapter: WindowAdapter,id: Long) {
+    private fun updateRecycler(adapter: WindowAdapter, id: Long) {
         lifecycleScope.launch(context = Dispatchers.IO) { // (1)
             runCatching { ApiServices().roomApiService.findRoomWindows(id).execute() } // (2)
                     .onSuccess {
@@ -67,7 +67,7 @@ class WindowsActivity : BasicActivity(), OnWindowSelectedListener {
             runCatching { ApiServices().windowsApiService.switchById(id).execute() }
                     .onSuccess {
                         withContext(context = Dispatchers.Main) { // (3)
-                            updateRecycler(adapter,roomId)
+                            updateRecycler(adapter, roomId)
                         }
                     }
                     .onFailure {
@@ -87,7 +87,7 @@ class WindowsActivity : BasicActivity(), OnWindowSelectedListener {
             runCatching { ApiServices().roomApiService.switchRoomWindows(id).execute() }
                     .onSuccess {
                         withContext(context = Dispatchers.Main) { // (3)
-                            updateRecycler(adapter,id)
+                            updateRecycler(adapter, id)
                         }
                     }
                     .onFailure {

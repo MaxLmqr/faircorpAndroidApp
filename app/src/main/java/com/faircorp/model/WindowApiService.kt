@@ -2,6 +2,7 @@ package com.faircorp.model
 
 import retrofit2.Call
 import retrofit2.http.GET
+import retrofit2.http.PUT
 import retrofit2.http.Path
 
 interface WindowApiService {
@@ -10,5 +11,8 @@ interface WindowApiService {
 
     @GET("windows/{id}")
     fun findById(@Path("id") id: Long): Call<WindowDto>
+
+    @PUT("windows/{id}/switch")
+    fun switchById(@Path("id") id: Long): Call<WindowDto>
 
 }

@@ -50,4 +50,14 @@
         app:layout_constraintTop_toBottomOf="@+id/txt_floor_number"
         app:layout_constraintVertical_bias="1.0" />
 
+    <Button
+        android:id="@+id/act_windows_item_switch_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SWITCH"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/txt_window_room_name"
+        app:layout_constraintStart_toEndOf="@+id/txt_window_status"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

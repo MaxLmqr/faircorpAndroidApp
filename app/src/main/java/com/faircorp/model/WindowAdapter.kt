@@ -18,6 +18,7 @@ class WindowAdapter(val listener: OnWindowSelectedListener) : RecyclerView.Adapt
         val room: TextView = view.findViewById(R.id.txt_window_room_name)
         val status: TextView = view.findViewById(R.id.txt_window_status)
         val context: Context = view.context
+        val button: Button = view.findViewById(R.id.act_windows_item_switch_button)
     }
 
     private val items = mutableListOf<WindowDto>() // (3)
@@ -32,7 +33,7 @@ class WindowAdapter(val listener: OnWindowSelectedListener) : RecyclerView.Adapt
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): WindowViewHolder { // (6)
         val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.activity_windows_item, parent, false)
+                .inflate(R.layout.activity_windows_item, parent, false)
         return WindowViewHolder(view)
     }
 
@@ -43,7 +44,8 @@ class WindowAdapter(val listener: OnWindowSelectedListener) : RecyclerView.Adapt
             name.text = window.name
             status.text = window.windowStatus.toString()
             room.text = window.roomName
-            itemView.setOnClickListener { listener.onWindowSelected(window.id)}
+            itemView.setOnClickListener { listener.onWindowSelected(window.id) }
+            button.setOnClickListener { listener.onWindowSwitchButtonSelected(window.id, this@WindowAdapter, window.roomId) }
         }
     }
 

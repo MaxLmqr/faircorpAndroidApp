@@ -26,7 +26,7 @@ class HeaterAdapter : RecyclerView.Adapter<HeaterAdapter.HeaterViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HeaterViewHolder { // (6)
         val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.activity_heaters_item, parent, false)
+                .inflate(R.layout.activity_heaters_item, parent, false)
         return HeaterViewHolder(view)
     }
 

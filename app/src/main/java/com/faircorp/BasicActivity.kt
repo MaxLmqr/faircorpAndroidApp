@@ -15,12 +15,12 @@ open class BasicActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when(item.itemId){
+        when (item.itemId) {
             R.id.menu_website -> startActivity(
-                Intent(Intent.ACTION_VIEW, Uri.parse("https://dev-mind.fr"))
+                    Intent(Intent.ACTION_VIEW, Uri.parse("https://dev-mind.fr"))
             )
             R.id.menu_email -> startActivity(
-                Intent(Intent.ACTION_SENDTO, Uri.parse("mailto://guillaume@dev-mind.fr"))
+                    Intent(Intent.ACTION_SENDTO, Uri.parse("mailto://guillaume@dev-mind.fr"))
             )
         }
         return super.onContextItemSelected(item)

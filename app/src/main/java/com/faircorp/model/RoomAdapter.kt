@@ -42,8 +42,8 @@ class RoomAdapter(val listener: OnRoomSelectedListener) : RecyclerView.Adapter<R
             current_temperature.text = room.current_temperature.toString()
             target_temperature.text = room.target_temperature.toString()
             floor.text = room.floor.toString()
-            w.setOnClickListener { listener.onRoomWindowsSelected(room.id,room.name,room.current_temperature,room.target_temperature)}
-            h.setOnClickListener { listener.onRoomHeatersSelected(room.id)}
+            w.setOnClickListener { listener.onRoomWindowsSelected(room.id, room.name, room.current_temperature, room.target_temperature) }
+            h.setOnClickListener { listener.onRoomHeatersSelected(room.id) }
         }
     }
 

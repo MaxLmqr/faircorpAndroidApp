@@ -21,5 +21,5 @@ interface RoomApiService {
     fun switchRoomWindows(@Path("id") id: Long): Call<Void>
 
     @GET("rooms/{id}/switchHeaters")
-    fun switchRoomHeaters(@Path("id") id:Long): Call<Void>
+    fun switchRoomHeaters(@Path("id") id: Long): Call<Void>
 }

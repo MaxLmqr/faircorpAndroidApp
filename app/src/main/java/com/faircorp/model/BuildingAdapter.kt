@@ -29,12 +29,11 @@ class BuildingAdapter(val listener: OnBuildingSelectedListener) : RecyclerView.A
     }
 
 
-
     override fun onBindViewHolder(holder: BuildingAdapter.BuildingViewHolder, position: Int) {  // (7)
         val building = items[position]
         holder.apply {
             name.text = building.name
-            itemView.setOnClickListener { listener.onBuildingSelected(building.id, building.name)}
+            itemView.setOnClickListener { listener.onBuildingSelected(building.id, building.name) }
         }
     }
 

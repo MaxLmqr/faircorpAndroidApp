@@ -32,7 +32,7 @@ class HeatersActivity : BasicActivity() {
         recyclerView.adapter = adapter
 
         switchHeatersButton.setOnClickListener { onSwitchButton(id, adapter) }
-        updateRecycler(id,adapter)
+        updateRecycler(id, adapter)
 
     }
 
@@ -61,7 +61,7 @@ class HeatersActivity : BasicActivity() {
             runCatching { ApiServices().roomApiService.switchRoomHeaters(id).execute() } // (2)
                     .onSuccess {
                         withContext(context = Dispatchers.Main) { // (3)
-                            updateRecycler(id,adapter)
+                            updateRecycler(id, adapter)
                         }
                     }
                     .onFailure {
