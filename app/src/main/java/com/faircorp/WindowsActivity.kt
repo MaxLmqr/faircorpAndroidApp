@@ -62,11 +62,31 @@ class WindowsActivity : BasicActivity(), OnWindowSelectedListener {
         }
     }
 
+    override fun onWindowSwitchButtonSelected(id: Long, adapter: WindowAdapter, roomId: Long) {
+        lifecycleScope.launch(context = Dispatchers.IO) {
+            runCatching { ApiServices().windowsApiService.switchById(id).execute() }
+                    .onSuccess {
+                        withContext(context = Dispatchers.Main) { // (3)
+                            updateRecycler(adapter,roomId)
+                        }
+                    }
+                    .onFailure {
+                        withContext(context = Dispatchers.Main) { // (3)
+                            Toast.makeText(
+                                    applicationContext,
+                                    "Error on windows status switch $it",
+                                    Toast.LENGTH_LONG
+                            ).show()
+                        }
+                    }
+        }
+    }
+
     private fun onSwitchButton(id: Long, adapter: WindowAdapter) {
         lifecycleScope.launch(context = Dispatchers.IO) {
             runCatching { ApiServices().roomApiService.switchRoomWindows(id).execute() }
                     .onSuccess {
-                        withContext(context=Dispatchers.Main) {
+                        withContext(context = Dispatchers.Main) { // (3)
                             updateRecycler(adapter,id)
                         }
                     }
@@ -74,7 +94,7 @@ class WindowsActivity : BasicActivity(), OnWindowSelectedListener {
                         withContext(context = Dispatchers.Main) { // (3)
                             Toast.makeText(
                                     applicationContext,
-                                    "Error on windows loading $it",
+                                    "Error on windows status switch $it",
                                     Toast.LENGTH_LONG
                             ).show()
                         }
