@@ -3,8 +3,8 @@ package com.faircorp
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
-import androidx.lifecycle.lifecycleScope
 import android.widget.Toast
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -15,6 +15,9 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
+// Show windows in a specific rooms. Possibility to switch status of all windows, or a particular
+// windows. In order to update the display when a status has been changed, I'm calling one more time
+// the api to get all the modifications and then update the recycler.
 class WindowsActivity : BasicActivity(), OnWindowSelectedListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {

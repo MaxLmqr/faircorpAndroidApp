@@ -7,6 +7,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.faircorp.R
 
+// Adapter to fill the heater recycler from a list of heaters object.
 class HeaterAdapter : RecyclerView.Adapter<HeaterAdapter.HeaterViewHolder>() {
     inner class HeaterViewHolder(view: View) : RecyclerView.ViewHolder(view) { // (2)
         val name: TextView = view.findViewById(R.id.txt_heater_name)

@@ -1,6 +1,5 @@
 package com.faircorp
 
-import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.Toast
@@ -10,11 +9,13 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.faircorp.model.ApiServices
 import com.faircorp.model.HeaterAdapter
-import com.faircorp.model.WindowAdapter
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
+
+// Just like buildings, windows or rooms, it loads informations from the api to build a list of heaters
+// in a specific room. We can then switch all room status. Switching only on heater status not implemented yet.
 class HeatersActivity : BasicActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {

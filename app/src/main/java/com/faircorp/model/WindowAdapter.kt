@@ -6,11 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
-import android.widget.Toast
-import androidx.appcompat.view.menu.MenuView
 import androidx.recyclerview.widget.RecyclerView
 import com.faircorp.R
 
+// Adapter to fill the windows list recycler in a particular room.
 class WindowAdapter(val listener: OnWindowSelectedListener) : RecyclerView.Adapter<WindowAdapter.WindowViewHolder>() { // (1)
 
     inner class WindowViewHolder(view: View) : RecyclerView.ViewHolder(view) { // (2)

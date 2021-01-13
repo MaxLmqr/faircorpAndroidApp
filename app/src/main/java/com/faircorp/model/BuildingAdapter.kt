@@ -7,6 +7,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.faircorp.R
 
+// Adapter to fill the building recycler.
 class BuildingAdapter(val listener: OnBuildingSelectedListener) : RecyclerView.Adapter<BuildingAdapter.BuildingViewHolder>() {
     inner class BuildingViewHolder(view: View) : RecyclerView.ViewHolder(view) { // (2)
         val name: TextView = view.findViewById(R.id.txt_building_name)
@@ -37,7 +38,4 @@ class BuildingAdapter(val listener: OnBuildingSelectedListener) : RecyclerView.A
         }
     }
 
-    override fun onViewRecycled(holder: BuildingAdapter.BuildingViewHolder) { // (2)
-        super.onViewRecycled(holder)
-    }
 }

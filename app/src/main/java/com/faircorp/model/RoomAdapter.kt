@@ -8,6 +8,8 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.faircorp.R
 
+
+// Adapter to fill the room recycler.
 class RoomAdapter(val listener: OnRoomSelectedListener) : RecyclerView.Adapter<RoomAdapter.RoomViewHolder>() {
 
     private val items = mutableListOf<RoomDto>()
@@ -49,10 +51,6 @@ class RoomAdapter(val listener: OnRoomSelectedListener) : RecyclerView.Adapter<R
 
     override fun getItemCount(): Int {
         return items.size
-    }
-
-    override fun onViewRecycled(holder: RoomAdapter.RoomViewHolder) { // (2)
-        super.onViewRecycled(holder)
     }
 
 }

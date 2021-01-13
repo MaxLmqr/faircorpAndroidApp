@@ -15,6 +15,9 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
+// Loads rooms in a specific building. Loaded when user clicks on a building.
+// Shows general informations and possibility to see windows or heaters in the specific room
+// by clicking on buttons.
 class RoomsActivity : BasicActivity(), OnRoomSelectedListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

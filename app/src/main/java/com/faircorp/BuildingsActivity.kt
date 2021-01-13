@@ -14,6 +14,9 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
+
+// This page manage buildings. We fetch information from the api and print it in a recycler.
+// When a user clicks on one of the building, it starts a room activity with the building id parameter.
 class BuildingsActivity : BasicActivity(), OnBuildingSelectedListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -47,6 +50,6 @@ class BuildingsActivity : BasicActivity(), OnBuildingSelectedListener {
     }
 
     override fun onBuildingSelected(id: Long, name: String) {
-        startActivity(Intent(this, RoomsActivity::class.java).putExtra(BUILDING_ID_PARAM, id).putExtra(BUILDING_NAME_PARAM, name));
+        startActivity(Intent(this, RoomsActivity::class.java).putExtra(BUILDING_ID_PARAM, id).putExtra(BUILDING_NAME_PARAM, name))
     }
 }
