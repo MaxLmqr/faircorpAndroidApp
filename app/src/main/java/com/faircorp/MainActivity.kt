@@ -2,6 +2,7 @@ package com.faircorp
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 
 const val WINDOW_NAME_PARAM = "com.faircorp.windowname.attribute"
 const val BUILDING_NAME_PARAM = "com.faircorp.buildingname.attribute"
@@ -16,7 +17,7 @@ class MainActivity : BasicActivity() {
 
     }
 
-    fun openBuildings() {
+    fun openBuildings(view: View) {
         startActivity(Intent(this, BuildingsActivity::class.java))
     }
 }
